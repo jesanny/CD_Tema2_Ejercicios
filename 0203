@@ -1,0 +1,34 @@
+# Ejercicio 3 — Ciclo de vida en la práctica
+
+"Una empresa de logística necesita un sistema para gestionar el estado de sus envíos. Los clientes podrán consultar online el estado de su envío usando el número de seguimiento. Los repartidores podrán actualizar el estado desde su móvil. Los requisitos cambiarán a medida que el equipo de negocio reciba feedback de los clientes piloto."
+
+¿Qué modelo de ciclo de vida recomendarías y por qué? (Cascada o Iterativo)
+
+R: yo usaria el modelo iterativo (adaptable), ya que en el enunciado nos comenta que sera un proyecto donde los requisitos cambiaran segun lo que el equipo de negocio reciba de feedback de los clientes pilotos, por lo que sera mucho mas facil de amoldar siguiendo el esquema de: [Planif.] → [Diseño] → [Cód.] → [Pruebas] → Entrega parcial, cada vez que se requiera modificar el codigo y ajustar funcionalidades.
+
+¿Qué metodología aplicarías? (Métrica v3 o Ágil) Justifica la respuesta.
+
+R: Utlizaria la metodologia Agil, ya que la "metrica v3" solo la usa el gobierno de España y la metodologia agil se adapta perfectamente a nuestro proyecto de la app para logistica. La metodologia Agil se define como adaptabilidad, colaboracion y la entrega continua de valor sobre la planificacion rigida que se realice al principio del proyecto.
+
+Diseña las tarjetas CRC para las clases Envío y Repartidor.
+
+## Tarjetas CRC
+
+| Clase: Envio| |
+|---|---|
+| **Responsabilidades** | **colaboradores**|
+| Conocer número de seguimiento |-|
+
+| Clase: repartidores| |
+|---|---|
+| **Responsabilidad** | **colaboradores**|
+| actualizar el estado desde su móvil| `envio`|
+
+
+Para la clase Envío, describe cómo debería comportarse la operación de actualizar el estado: qué dato recibe, qué valores puede tomar el nuevo estado (por ejemplo, "EN_ALMACÉN", "EN_REPARTO", "ENTREGADO" y "DEVUELTO") y qué debería devolver para confirmar que el cambio se ha aplicado.
+
+el dato que recibe seria un Enumerado llamado, por ejemplo, EstadoEnvio. Esto evita errores tipográficos por parte del repartidor o del sistema.
+que valores puede tomar el nuevo estado: lo dice el enunciado EN_ALMACÉN", "EN_REPARTO", "ENTREGADO" y "DEVUELTO"
+que deberia devolver: Para confirmar que el cambio se ha aplicado, la operación debe devolver un valor booleano (true o false).
+
+git pu
